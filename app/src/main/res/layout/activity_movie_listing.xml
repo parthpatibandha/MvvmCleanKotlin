@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_bg"
+    android:focusableInTouchMode="true"
+    tools:context=".presentation.home.MovieListingActivity">
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_8"
+        android:background="@drawable/search_background"
+        android:drawableStart="@android:drawable/ic_menu_search"
+        android:drawableLeft="@android:drawable/ic_menu_search"
+        android:drawablePadding="@dimen/margin_8"
+        android:hint="@string/str_search"
+        android:padding="@dimen/margin_8"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_0"
+        android:layout_marginTop="@dimen/margin_1"
+        android:padding="@dimen/margin_8"
+        app:layoutManager="android.support.v7.widget.GridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchView"
+        app:spanCount="2"
+        tools:listitem="@layout/cell_movie_item" />
+
+    <include layout="@layout/layout_empty" />
+
+</android.support.constraint.ConstraintLayout>
